@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Survey Data Cleaning &amp; Visualization | Tetyana Nesdill</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Get to know your class!">
+    <meta name="generator" content="Hugo 0.82.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="https://tsolopchuk.github.io/Tetyana_Portfolio/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Survey Data Cleaning &amp; Visualization" />
+<meta property="og:description" content="Get to know your class!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-03-22T11:13:32-04:00" />
+<meta property="article:modified_time" content="2021-03-22T11:13:32-04:00" /><meta property="og:site_name" content="Tetyana Nesdill" />
+
+<meta itemprop="name" content="Survey Data Cleaning &amp; Visualization">
+<meta itemprop="description" content="Get to know your class!"><meta itemprop="datePublished" content="2021-03-22T11:13:32-04:00" />
+<meta itemprop="dateModified" content="2021-03-22T11:13:32-04:00" />
+<meta itemprop="wordCount" content="2990">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Survey Data Cleaning &amp; Visualization"/>
+<meta name="twitter:description" content="Get to know your class!"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://tsolopchuk.github.io/Tetyana_Portfolio/images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg');">
+    <div class="pb2-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://tsolopchuk.github.io/Tetyana_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Tetyana Nesdill
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv5 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Survey Data Cleaning &amp; Visualization</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Get to know your class!
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      <h1 class="f1 athelas mt3 mb1">Survey Data Cleaning &amp; Visualization</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-03-22T11:13:32-04:00">March 22, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>This notebook is dedicated to a short visual exploration of a survey data. The survey participants are students in a graduate program. The survey includes 13 questions related to data science skills and experiences, as well as some personal questions to get to know your class better. As part of the survey, each student answered 13 questions and also predicted how the fellow students would answer each question. For example, there is a question around food preferences and whether one prefers spicy, sweet or savory food. Each student would select the preferred type of food, for example, savory. Next, each student can predict what percentage of the class prefers savory, sweet, or spicy foods. For example, one could predict 20%, 30%, and 50% split between savory, sweet, and spicy foods. The full dataset and a Jupyter notebook is available on GitHub <a href="https://github.com/tsolopchuk/survey_visualization">https://github.com/tsolopchuk/survey_visualization</a></p>
+<p>The main objective of this notebook is to provide a better understanding of the collected survey data. For example, explore how the predictions differ from actual responses, or if there is a correlation between how people answered different questions. In order to achieve these objectives, we are going to do some visual exploration of data. However, before we can get started with the data visualization, we need to clean up our dataset.</p>
+<p><strong>Load and clean the data</strong></p>
+<p>Below is a snapshot of the messy survey data. Responses of one student is aggregated into one row. The below snapshot includes responses of one participant and as we can notice the questions are mixed in with the answers, predictions are mixed in with student&rsquo;s actual responses. Additionally, the survey questions have different number of responses. For example, &lsquo;Have you ever visited NYC?&rsquo; question has two answers: &lsquo;Yes&rsquo; and &lsquo;No&rsquo;, while &lsquo;Which generation do you most identify with?&rsquo; has five possible answers.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/Capture0.PNG"/> 
+</figure>
+
+<p>First, we are going to define a function that cleans the survey data. This function allows to clean all 13 questions, regardless of structure of each question. The function takes the actual question and associated data for that question as an input. The function provides clean predicted values dataframe and clean actual values dataframe as an output.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> re
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns
+<span style="color:#f92672">from</span> pywaffle <span style="color:#f92672">import</span> Waffle
+<span style="color:#f92672">from</span> textwrap <span style="color:#f92672">import</span> wrap
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;Combine_Corrected_Survey (1).csv&#39;</span>)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cleanser</span>(col1, question):
+
+    list1 <span style="color:#f92672">=</span> []
+    list2 <span style="color:#f92672">=</span> []
+    list3 <span style="color:#f92672">=</span> []
+    list4 <span style="color:#f92672">=</span> []
+    list5 <span style="color:#f92672">=</span> []
+    answer <span style="color:#f92672">=</span> []
+
+    <span style="color:#75715e">#first, the function checks how many answers are in each question. For example, most of the questions have 3 answers,</span>
+    <span style="color:#75715e">#but there are a few questions that have a different number of answer (for example, Yes/No)</span>
+    reg_label <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;[a-zA-Z][^:]+&#39;</span>,col1<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>])
+    <span style="color:#66d9ef">if</span> len(reg_label) <span style="color:#f92672">==</span> <span style="color:#ae81ff">4</span>:     
+        <span style="color:#75715e">#using regex find column labels (e.g., Agree/ Disagree) and create an &#39;answer&#39; list with actual values</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> col1:
+            reg_label <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;[a-zA-Z][^:]+&#39;</span>,i)
+            label1 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+            label2 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
+            label3 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>strip()
+            answer<span style="color:#f92672">.</span>append(reg_label[<span style="color:#ae81ff">3</span>])
+
+            <span style="color:#75715e">#using regex find predicted values and append to corresponding lists</span>
+            reg <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;[0-9]+&#39;</span>,i)
+            list1<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">0</span>]))
+            list2<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">1</span>]))
+            list3<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">2</span>]))
+
+        <span style="color:#75715e">#create dataframe from 3 lists with predicted values and add identified labels; returns predicted values df for a question</span>
+        df_col1 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame([list1, list2, list3])
+        df_col1<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;username&#39;</span>]
+        df_col1<span style="color:#f92672">.</span>index <span style="color:#f92672">=</span> [label1, label2, label3]
+        df_col1 <span style="color:#f92672">=</span> df_col1<span style="color:#f92672">.</span>T
+
+    <span style="color:#66d9ef">elif</span> len(reg_label) <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>:
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> col1:
+            reg_label <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;[a-zA-Z][^:]+&#39;</span>,i)
+            label1 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+            label2 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
+            answer<span style="color:#f92672">.</span>append(reg_label[<span style="color:#ae81ff">2</span>])
+
+            reg <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;[0-9]+&#39;</span>,i)
+            list1<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">0</span>]))
+            list2<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">1</span>]))
+
+        df_col1 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame([list1, list2])
+        df_col1<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;username&#39;</span>]
+        df_col1<span style="color:#f92672">.</span>index <span style="color:#f92672">=</span> [label1, label2]
+        df_col1 <span style="color:#f92672">=</span> df_col1<span style="color:#f92672">.</span>T
+
+    <span style="color:#66d9ef">elif</span> len(reg_label) <span style="color:#f92672">==</span> <span style="color:#ae81ff">6</span>:
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> col1:
+            reg_label <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;[a-zA-Z][^:]+&#39;</span>,i)
+            label1 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>strip()
+            label2 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>strip()
+            label3 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>strip()
+            label4 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>strip()
+            label5 <span style="color:#f92672">=</span> reg_label[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span>strip()
+            answer<span style="color:#f92672">.</span>append(reg_label[<span style="color:#ae81ff">5</span>])
+
+            reg <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(<span style="color:#e6db74">&#39;[0-9]+&#39;</span>,i)
+            list1<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">0</span>]))
+            list2<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">1</span>]))
+            list3<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">2</span>]))
+            list4<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">3</span>]))
+            list5<span style="color:#f92672">.</span>append(int(reg[<span style="color:#ae81ff">4</span>]))
+
+        df_col1 <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame([list1, list2, list3, list4, list5])
+        df_col1<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;username&#39;</span>]
+        df_col1<span style="color:#f92672">.</span>index <span style="color:#f92672">=</span> [label1, label2, label3, label4, label5]
+        df_col1 <span style="color:#f92672">=</span> df_col1<span style="color:#f92672">.</span>T
+
+    <span style="color:#66d9ef">return</span> df_col1, answer, question
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#Now we can use the above defined function to test how it loads and cleans the data</span>
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">1</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">1</span>])
+
+<span style="color:#75715e">#the function returns a tuple, so we will need to unpack it</span>
+df_pred, answer, question <span style="color:#f92672">=</span> func
+<span style="color:#66d9ef">print</span>(df_pred<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>))
+<span style="color:#66d9ef">print</span>(df_pred<span style="color:#f92672">.</span>columns)
+<span style="color:#66d9ef">print</span>(question)
+</code></pre></div><p>Below is a snapshot of cleaned data for one of the survey questions.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/Capture1.PNG"/> 
+</figure>
+
+<p><strong>Initial data exploration with barcharts and pieplots</strong></p>
+<p>Let&rsquo;s say we wanted to take a look at the overall pattern in predicted and actual values. For example, how many students predicted that their peers are comfortable debugging the code (&lsquo;How comfortable are you with your ability to debug an error in a python script?'). For the below section I am using the first 6 questions to analyze data science and career specific questions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#The below function creates a barplot. The function takes prediction df as one of the inputs.</span>
+<span style="color:#75715e">#Text input refers to annotations that we can customize for each of the barplots</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bar_plots</span>(Q, question, i, j, text):
+
+    Q <span style="color:#f92672">=</span> Q<span style="color:#f92672">.</span>sort_values(by <span style="color:#f92672">=</span> Q<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">0</span>], ascending <span style="color:#f92672">=</span> False)
+
+    bars1 <span style="color:#f92672">=</span> (Q<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">0</span>])
+    bars2 <span style="color:#f92672">=</span> (Q<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">1</span>])
+    bars3 <span style="color:#f92672">=</span> (Q<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">2</span>])
+    bars <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>add(bars1, bars2)<span style="color:#f92672">.</span>tolist()
+    names <span style="color:#f92672">=</span> Q<span style="color:#f92672">.</span>index
+
+    ax[i,j]<span style="color:#f92672">.</span>bar(names, bars1, edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;white&#39;</span>, label<span style="color:#f92672">=</span>Q<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">0</span>])
+    ax[i,j]<span style="color:#f92672">.</span>bar(names, bars2, bottom<span style="color:#f92672">=</span>bars1, edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;white&#39;</span>, label<span style="color:#f92672">=</span>Q<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">1</span>])
+    ax[i,j]<span style="color:#f92672">.</span>bar(names, bars3, bottom<span style="color:#f92672">=</span>bars, edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;white&#39;</span>,label<span style="color:#f92672">=</span>Q<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">2</span>])
+    ax[i,j]<span style="color:#f92672">.</span>annotate(text, xy<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>), size<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>,
+                 bbox<span style="color:#f92672">=</span>dict(boxstyle<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;round, pad=0.3&#39;</span>, fc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;azure&#39;</span>,ec<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;navy&#39;</span>,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+    <span style="color:#75715e">#I am using wrap function so that the title is displayed in two lines and it is more legible</span>
+    ax[i,j]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(wrap(question, <span style="color:#ae81ff">60</span>)))
+    ax[i,j]<span style="color:#f92672">.</span>set_xticklabels(names, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>);
+    ax[i,j]<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lower right&#39;</span>)
+
+<span style="color:#75715e">#Below are the annotations for each of the 6 plots</span>
+annotation_1<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Most of the predictions indicate that </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">students believe that their peers </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">are more likely than not to agree&#39;</span>
+annotation_2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Most of the students predicted that </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">their peers would agree with the statement&#39;</span>
+annotation_3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Most of the predictions indicate that </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">students believe that their peers </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">are more likely than not to agree&#39;</span>
+annotation_4 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Most of the students predicted that </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">their peers would agree with the statement&#39;</span>
+annotation_5 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Most of the predictions indicate that </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">students believe that their peers </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">are more likely than not to agree&#39;</span>
+annotation_6<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Most of the students predicted that </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">their peers would disagree with the statement&#39;</span>
+
+<span style="color:#75715e">#we are putting annotations in a list, so we can use them in the bar_plots function we defined above</span>
+l <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, annotation_1, annotation_2, annotation_3, annotation_4, annotation_5, annotation_6]
+
+<span style="color:#75715e">#now, we can create our figure</span>
+<span style="color:#75715e">#I am setting the tight_layout so there is more space between the charts and all labels are visible</span>
+fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>, figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">12</span>),  sharey<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;row&#39;</span>)
+fig<span style="color:#f92672">.</span>tight_layout(pad<span style="color:#f92672">=</span><span style="color:#ae81ff">3.0</span>, h_pad<span style="color:#f92672">=</span><span style="color:#ae81ff">16.0</span>)
+
+<span style="color:#75715e">#Using the for loops we can fill our figure using bar_plots function and loading the data using cleanser function defined earlier</span>
+n<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+            n<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+            Q_data_load <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,n], df<span style="color:#f92672">.</span>columns[n])
+            Q_data,  answer, question <span style="color:#f92672">=</span> Q_data_load
+            bar_plots(Q_data, question, i,j, l[n])
+</code></pre></div><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/download1.png"/> 
+</figure>
+
+<p>The above stacked barplots show the predicted responses. We can look at the actual responses by using pie charts. First, we will need to load the actual responses using the earlier defined cleanser function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#As a first step, let&#39;s first create one df that will contain all actual answers for 6 questions.</span>
+l <span style="color:#f92672">=</span> []
+questions <span style="color:#f92672">=</span> []
+n<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> n <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span>:
+    n<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+    Q_data_load <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,n], df<span style="color:#f92672">.</span>columns[n])
+    <span style="color:#f92672">*</span>_, Q, ques <span style="color:#f92672">=</span> Q_data_load
+    l<span style="color:#f92672">.</span>append(Q)
+    questions<span style="color:#f92672">.</span>append(ques)
+
+actual_values <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(l)
+actual_values <span style="color:#f92672">=</span> actual_values<span style="color:#f92672">.</span>T
+labels <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Q1&#39;</span>, <span style="color:#e6db74">&#39;Q2&#39;</span>, <span style="color:#e6db74">&#39;Q3&#39;</span> ,<span style="color:#e6db74">&#39;Q4&#39;</span>, <span style="color:#e6db74">&#39;Q5&#39;</span>, <span style="color:#e6db74">&#39;Q6&#39;</span>]
+actual_values<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> labels
+<span style="color:#75715e">#I have noticed that there are some spaces around answers for question 1. I removed them below.</span>
+actual_values[<span style="color:#e6db74">&#39;Q1&#39;</span>] <span style="color:#f92672">=</span> actual_values[<span style="color:#e6db74">&#39;Q1&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>strip()
+
+
+<span style="color:#75715e">#Below we are creating a function that builds a pie chart based on the actual values df defined above</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pies</span>(t, i, j):
+    data <span style="color:#f92672">=</span> actual_values<span style="color:#f92672">.</span>iloc[:,t]<span style="color:#f92672">.</span>value_counts()
+    ax[i,j]<span style="color:#f92672">.</span>pie(data, labels<span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>index, autopct<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%1.1f%%</span><span style="color:#e6db74">&#39;</span>)
+    ax[i,j]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(wrap(questions[t], <span style="color:#ae81ff">60</span>)))
+
+<span style="color:#75715e">#Now, we can create a figure and fill it in using for loops</span>
+fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>, figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>))
+fig<span style="color:#f92672">.</span>tight_layout(pad<span style="color:#f92672">=</span><span style="color:#ae81ff">3.0</span>, h_pad<span style="color:#f92672">=</span><span style="color:#ae81ff">7.0</span>)
+
+t<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+        t<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+        pies(t,i,j)
+</code></pre></div><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/download2.png"/> 
+</figure>
+
+<p>Some initial insights from the explored data are presented below.
+It seems that more people disagree that a certain level of programming intelligence is something that cannot be changed. Also, most of the class agrees that doing well at programming and visualization tasks will enhance possible career opportunities.
+More than half of the respondents are also comfortable performing data visualization in Python and are confident in their ability to debug the code.
+It was interesting to learn that 68% of the respondents believe that completing programming tasks increases their self-worth.</p>
+<p><strong>Compare predicted values to actual values</strong></p>
+<p>In the next section we will use the predicted and actual responses on the same plot to see how far off the actual responses were from the predicted values.
+The scatterplot represents predicted values and the dashed lines represent actual values.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#first let&#39;s define a function that create a scatterplot of predicted values and draws a straight line with actual values</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">scatter_plots</span>(df_pred, question, i, j , q):
+    names <span style="color:#f92672">=</span> (df_pred<span style="color:#f92672">.</span>index)
+    <span style="color:#75715e">#we have two different types of answers (Agree/Disagree) and (Comfortable/Uncomfortable),</span>
+    <span style="color:#75715e">#so we check which column names are applicable for each of the charts</span>
+    <span style="color:#66d9ef">if</span> list(df_pred<span style="color:#f92672">.</span>columns) <span style="color:#f92672">==</span> [<span style="color:#e6db74">&#39;Agree&#39;</span>, <span style="color:#e6db74">&#39;Disagree&#39;</span>, <span style="color:#e6db74">&#39;Neither agree nor disagree&#39;</span>]:
+
+        <span style="color:#75715e">#to be able to compare actual values to predicted, we need to count the actual results and convert result to percentage</span>
+        count_actual <span style="color:#f92672">=</span> actual_values<span style="color:#f92672">.</span>iloc[:,q]<span style="color:#f92672">.</span>value_counts()
+        actual1 <span style="color:#f92672">=</span> count_actual[<span style="color:#e6db74">&#39;Disagree&#39;</span>]<span style="color:#f92672">/</span><span style="color:#ae81ff">41</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+        actual2 <span style="color:#f92672">=</span> count_actual[<span style="color:#e6db74">&#39;Agree&#39;</span>]<span style="color:#f92672">/</span><span style="color:#ae81ff">41</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+        actual3 <span style="color:#f92672">=</span> count_actual[<span style="color:#e6db74">&#39;Neither agree nor disagree&#39;</span>]<span style="color:#f92672">/</span><span style="color:#ae81ff">41</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+
+        <span style="color:#75715e">#scatter plot will represent predicted values</span>
+        ax[i,j]<span style="color:#f92672">.</span>scatter(names, df_pred[<span style="color:#e6db74">&#39;Disagree&#39;</span>], color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;blue&#39;</span>, label <span style="color:#f92672">=</span> df_pred[<span style="color:#e6db74">&#39;Disagree&#39;</span>]<span style="color:#f92672">.</span>name)
+        ax[i,j]<span style="color:#f92672">.</span>scatter(names, df_pred[<span style="color:#e6db74">&#39;Agree&#39;</span>], color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>, label <span style="color:#f92672">=</span> df_pred[<span style="color:#e6db74">&#39;Agree&#39;</span>]<span style="color:#f92672">.</span>name)
+        ax[i,j]<span style="color:#f92672">.</span>scatter(names, df_pred[<span style="color:#e6db74">&#39;Neither agree nor disagree&#39;</span>], color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;green&#39;</span>,
+                        label<span style="color:#f92672">=</span>df_pred[<span style="color:#e6db74">&#39;Neither agree nor disagree&#39;</span>]<span style="color:#f92672">.</span>name)
+        <span style="color:#75715e">#axhline will represent calculated actual percentages</span>
+        ax[i,j]<span style="color:#f92672">.</span>axhline(actual1, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;blue&#39;</span>, linestyle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dashed&#39;</span>)
+        ax[i,j]<span style="color:#f92672">.</span>axhline(actual2, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;red&#39;</span>, linestyle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dashed&#39;</span>)
+        ax[i,j]<span style="color:#f92672">.</span>axhline(actual3, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;green&#39;</span>, linestyle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dashed&#39;</span>)
+
+        ax[i,j]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(wrap(question, <span style="color:#ae81ff">60</span>)))
+        ax[i,j]<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lower right&#39;</span>)
+        ax[i,j]<span style="color:#f92672">.</span>set_xticklabels(names, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>);
+
+    <span style="color:#75715e">#same process as described above applies for Comfortable/ Uncomfortable labels</span>
+    <span style="color:#66d9ef">elif</span> list(df_pred<span style="color:#f92672">.</span>columns) <span style="color:#f92672">==</span> [<span style="color:#e6db74">&#39;Comfortable&#39;</span>, <span style="color:#e6db74">&#39;Neither comfortable nor uncomfortable&#39;</span>,
+       <span style="color:#e6db74">&#39;Uncomfortable&#39;</span>]:
+
+        count_actual <span style="color:#f92672">=</span> actual_values<span style="color:#f92672">.</span>iloc[:,q]<span style="color:#f92672">.</span>value_counts()
+        actual1 <span style="color:#f92672">=</span> count_actual[<span style="color:#e6db74">&#39;Uncomfortable&#39;</span>]<span style="color:#f92672">/</span><span style="color:#ae81ff">41</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+        actual2 <span style="color:#f92672">=</span> count_actual[<span style="color:#e6db74">&#39;Comfortable&#39;</span>]<span style="color:#f92672">/</span><span style="color:#ae81ff">41</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+        actual3 <span style="color:#f92672">=</span> count_actual[<span style="color:#e6db74">&#39;Neither comfortable nor uncomfortable&#39;</span>]<span style="color:#f92672">/</span><span style="color:#ae81ff">41</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+
+        ax[i,j]<span style="color:#f92672">.</span>scatter(names, df_pred[<span style="color:#e6db74">&#39;Uncomfortable&#39;</span>], color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;blue&#39;</span> , label <span style="color:#f92672">=</span> df_pred[<span style="color:#e6db74">&#39;Uncomfortable&#39;</span>]<span style="color:#f92672">.</span>name)
+        ax[i,j]<span style="color:#f92672">.</span>scatter(names, df_pred[<span style="color:#e6db74">&#39;Comfortable&#39;</span>], color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>, label <span style="color:#f92672">=</span> df_pred[<span style="color:#e6db74">&#39;Comfortable&#39;</span>]<span style="color:#f92672">.</span>name)
+        ax[i,j]<span style="color:#f92672">.</span>scatter(names, df_pred[<span style="color:#e6db74">&#39;Neither comfortable nor uncomfortable&#39;</span>], color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;green&#39;</span>,
+                        label<span style="color:#f92672">=</span>df_pred[<span style="color:#e6db74">&#39;Neither comfortable nor uncomfortable&#39;</span>]<span style="color:#f92672">.</span>name)
+        ax[i,j]<span style="color:#f92672">.</span>axhline(actual1, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;blue&#39;</span>, linestyle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dashed&#39;</span>)
+        ax[i,j]<span style="color:#f92672">.</span>axhline(actual2, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;red&#39;</span>, linestyle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dashed&#39;</span>)
+        ax[i,j]<span style="color:#f92672">.</span>axhline(actual3, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;green&#39;</span>, linestyle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dashed&#39;</span>)
+
+
+        ax[i,j]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(wrap(question, <span style="color:#ae81ff">60</span>)))       
+        ax[i,j]<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lower right&#39;</span>)
+        ax[i,j]<span style="color:#f92672">.</span>set_xticklabels(names, rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>, size<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>);
+
+<span style="color:#75715e">#creating a figure and filling it in using for loops</span>
+fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>, figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>),  sharey<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;row&#39;</span>)
+fig<span style="color:#f92672">.</span>tight_layout(pad<span style="color:#f92672">=</span><span style="color:#ae81ff">3.0</span>, h_pad<span style="color:#f92672">=</span><span style="color:#ae81ff">17.0</span>)
+
+n<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+q<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+            n<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+            q<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+            Q_data_load <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,n], df<span style="color:#f92672">.</span>columns[n])
+            Q_data, answer, question <span style="color:#f92672">=</span> Q_data_load
+            scatter_plots(Q_data, question, i,j,q)
+</code></pre></div><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/download3.png"/> 
+</figure>
+
+<p>I was also  a participant in this survey as well! So I found my responses on the charts above, since I was curious how well I did in predicting responses of other students. And I came close in predicting only 2 out of 6 questions (oh no!). My only close predictions were that I thought the rest of the class will agree that doing programming and visualization tasks will improve career opportunities. The rest I missed by a lot&hellip;</p>
+<p>However, it is also interesting to see how close the class was to predict actual values as a group. It seems that the class was better at predicting programming intelligence question and that doing programming and visualization tasks will improve career outcomes. The collective ability to estimate peers&rsquo; skills was not as precise when compared to actual results.</p>
+<p><strong>Is there correlation between predicted answers?</strong></p>
+<p>Next, we can create a heatmap and explore correlation between different answers for the six questions we have been working with. For example, is there a correlation between disagreeing with question 1 and agreeing with question 6?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#Below we are calling the cleanser function defined in the first cell of this notebook.</span>
+<span style="color:#75715e">#we also going to apply some minor data manipulations to add question number (e.g., Q1) to the column labels, so we can</span>
+<span style="color:#75715e">#get something like &#39;Q1 - Disagree&#39;. This will allow us to easier interpret the heatmap</span>
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">1</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">1</span>])
+df_pred_Q1, answer_Q1, question_Q1 <span style="color:#f92672">=</span> func
+df_pred_Q1<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q1 - &#39;</span> <span style="color:#f92672">+</span> df_pred_Q1<span style="color:#f92672">.</span>columns
+df_pred_Q1 <span style="color:#f92672">=</span> df_pred_Q1<span style="color:#f92672">.</span>reset_index()
+df_pred_Q1<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">2</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">2</span>])
+df_pred_Q2, answer_Q2, question_Q2 <span style="color:#f92672">=</span> func
+df_pred_Q2<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q2 - &#39;</span> <span style="color:#f92672">+</span> df_pred_Q2<span style="color:#f92672">.</span>columns
+df_pred_Q2 <span style="color:#f92672">=</span> df_pred_Q2<span style="color:#f92672">.</span>reset_index()
+df_pred_Q2<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">3</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">3</span>])
+df_pred_Q3, answer_Q3, question_Q3 <span style="color:#f92672">=</span> func
+df_pred_Q3<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q3 - &#39;</span> <span style="color:#f92672">+</span> df_pred_Q3<span style="color:#f92672">.</span>columns
+df_pred_Q3 <span style="color:#f92672">=</span> df_pred_Q3<span style="color:#f92672">.</span>reset_index()
+df_pred_Q3<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">4</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">4</span>])
+df_pred_Q4, answer_Q4, question_Q4 <span style="color:#f92672">=</span> func
+df_pred_Q4<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q4 - &#39;</span> <span style="color:#f92672">+</span> df_pred_Q4<span style="color:#f92672">.</span>columns
+df_pred_Q4 <span style="color:#f92672">=</span> df_pred_Q4<span style="color:#f92672">.</span>reset_index()
+df_pred_Q4<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">5</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">5</span>])
+df_pred_Q5, answer_Q5, question_Q5 <span style="color:#f92672">=</span> func
+df_pred_Q5<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q5 - &#39;</span> <span style="color:#f92672">+</span> df_pred_Q5<span style="color:#f92672">.</span>columns
+df_pred_Q5 <span style="color:#f92672">=</span> df_pred_Q5<span style="color:#f92672">.</span>reset_index()
+df_pred_Q5<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">6</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">6</span>])
+df_pred_Q6, answer_Q6, question_Q6 <span style="color:#f92672">=</span> func
+df_pred_Q6<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q6 - &#39;</span> <span style="color:#f92672">+</span> df_pred_Q6<span style="color:#f92672">.</span>columns
+df_pred_Q6 <span style="color:#f92672">=</span> df_pred_Q6<span style="color:#f92672">.</span>reset_index()
+df_pred_Q6<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+df_preds <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([df_pred_Q1, df_pred_Q2, df_pred_Q3, df_pred_Q4, df_pred_Q5, df_pred_Q6], sort <span style="color:#f92672">=</span>False, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+df_pred_Q1[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q1&#39;</span>
+df_pred_Q1[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q1&#39;</span>
+df_pred_Q3[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q3&#39;</span>
+df_pred_Q4[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q4&#39;</span>
+df_pred_Q5[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q5&#39;</span>
+df_pred_Q6[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q6&#39;</span>
+
+<span style="color:#75715e">#Below we are creating a heatmap, we are also going to include correlation coefficients in each cell so it is easier to</span>
+<span style="color:#75715e">#interpret the results</span>
+corr <span style="color:#f92672">=</span> df_preds<span style="color:#f92672">.</span>corr()
+plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">10</span>))
+ax<span style="color:#f92672">=</span>sns<span style="color:#f92672">.</span>heatmap(
+    corr, annot<span style="color:#f92672">=</span> True, fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.1f&#39;</span>, square<span style="color:#f92672">=</span> True,
+    cmap<span style="color:#f92672">=</span>sns<span style="color:#f92672">.</span>diverging_palette(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">220</span>, n<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>))
+ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Correlogram Q1-Q6&#39;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>)
+bottom, top <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>get_ylim()
+
+<span style="color:#75715e">#there is actually a bug in the latest version of matplotlib that cuts the top row of heat map in half.</span>
+<span style="color:#75715e">#I found the below fix online</span>
+ax<span style="color:#f92672">.</span>set_ylim(bottom <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.5</span>, top <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.5</span>);
+</code></pre></div><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/download4.png"/> 
+</figure>
+
+<p>We can clearly see that there is a strong correlation between predicting &lsquo;Disagree&rsquo; and &lsquo;Agree&rsquo; within the same question. This makes intuitive sense. For example, if someone predicts that class will &lsquo;Disagree&rsquo; with the statement, then they are also very likely to predict that the class will not &lsquo;Agree&rsquo; with the same statement. We will see high negative correlations for such examples. For example, ‘Disagree’ with Question 6 has high negative correlation with ‘Agree’ with Question 6. This is quite straightforward.</p>
+<p>However, if we compare answers between different questions, we can see that certain answers have moderate correlation. For example, there is a moderate correlation between &lsquo;Agree&rsquo; answer in Q2 and ‘Agree’ answer in Q5. The correlation coefficient is about 0.5, which could be considered as moderate correlation. We could say that if someone agreed with Q2 (&lsquo;Doing well at programming tasks will enhance my career/job opportunities.') they are also likely going to agree with Q5 (&lsquo;I believe that my ability to complete programming tasks will increase my self worth.').</p>
+<p><strong>Get to know your class!</strong></p>
+<p>The first part of this notebook was focused on the first 6 career and data science knowledge questions. However, I also wanted to take a look at some more fun personal questions, for example, what percentage of the class has been to NYC and what percentage of the class likes spicy food!</p>
+<p>The first plot that I am using in this section is stripplot. The stripplot scatter will show predicted values and the pointplot will show actual values. I am using seaborn library for this next section.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#load predicted values for Questions 10-13</span>
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">10</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">10</span>])
+df_pred_Q10, answer_Q10, question_Q10 <span style="color:#f92672">=</span> func
+df_pred_Q10 <span style="color:#f92672">=</span> df_pred_Q10<span style="color:#f92672">.</span>reset_index()
+df_pred_Q10<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">11</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">11</span>])
+df_pred_Q11, answer_Q11, question_Q11 <span style="color:#f92672">=</span> func
+df_pred_Q11 <span style="color:#f92672">=</span> df_pred_Q11<span style="color:#f92672">.</span>reset_index()
+df_pred_Q11<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">12</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">12</span>])
+df_pred_Q12, answer_Q12, question_Q12 <span style="color:#f92672">=</span> func
+df_pred_Q12 <span style="color:#f92672">=</span> df_pred_Q12<span style="color:#f92672">.</span>reset_index()
+df_pred_Q12<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+func <span style="color:#f92672">=</span> cleanser(df<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">13</span>], df<span style="color:#f92672">.</span>columns[<span style="color:#ae81ff">13</span>])
+df_pred_Q13, answer_Q13, question_Q13 <span style="color:#f92672">=</span> func
+df_pred_Q13 <span style="color:#f92672">=</span> df_pred_Q13<span style="color:#f92672">.</span>reset_index()
+df_pred_Q13<span style="color:#f92672">.</span>drop(columns <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;username&#39;</span>], inplace<span style="color:#f92672">=</span>True)
+
+df_pred_Q10[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q10&#39;</span>
+df_pred_Q11[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q11&#39;</span>
+df_pred_Q12[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q12&#39;</span>
+df_pred_Q13[<span style="color:#e6db74">&#39;question&#39;</span>]<span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Q13&#39;</span>
+
+<span style="color:#75715e">#create actuals df</span>
+actual_values <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame([answer_Q11, answer_Q12, answer_Q13])
+
+actual_values <span style="color:#f92672">=</span> actual_values<span style="color:#f92672">.</span>T
+labels <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;Q11 - books&#39;</span>, <span style="color:#e6db74">&#39;Q12 - food&#39;</span> ,<span style="color:#e6db74">&#39;Q13 - NYC&#39;</span>]
+actual_values<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> labels
+
+df_pred <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([df_pred_Q11, df_pred_Q12, df_pred_Q13],sort <span style="color:#f92672">=</span> False)
+
+<span style="color:#75715e">#melt the data into format needed for the charts</span>
+pred <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>melt(df_pred,<span style="color:#e6db74">&#39;question&#39;</span>, var_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;response&#39;</span>)
+act <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>melt(actual_values, var_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;response&#39;</span>)
+
+act_group <span style="color:#f92672">=</span> act<span style="color:#f92672">.</span>groupby([<span style="color:#e6db74">&#39;response&#39;</span>, <span style="color:#e6db74">&#39;value&#39;</span>])<span style="color:#f92672">.</span>size()
+act_group <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(act_group)
+act_group <span style="color:#f92672">=</span> act_group<span style="color:#f92672">.</span>reset_index()
+act_group<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;question&#39;</span>,<span style="color:#e6db74">&#39;response&#39;</span>,<span style="color:#e6db74">&#39;value&#39;</span>]
+act_group[<span style="color:#e6db74">&#39;value&#39;</span>] <span style="color:#f92672">=</span> act_group[<span style="color:#e6db74">&#39;value&#39;</span>]<span style="color:#f92672">/</span><span style="color:#ae81ff">41</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
+
+
+<span style="color:#75715e">#create stripplots using predicted values and pointplots using actual values</span>
+fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">5</span>))
+sns<span style="color:#f92672">.</span>despine(bottom<span style="color:#f92672">=</span>True, left<span style="color:#f92672">=</span>True)
+
+sns<span style="color:#f92672">.</span>stripplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;question&#34;</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;response&#34;</span>,
+                  data<span style="color:#f92672">=</span>pred, dodge<span style="color:#f92672">=</span>True, alpha<span style="color:#f92672">=.</span><span style="color:#ae81ff">35</span>, zorder<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+sns<span style="color:#f92672">.</span>pointplot(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;value&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;question&#34;</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;response&#34;</span>,
+                  data<span style="color:#f92672">=</span>act_group, dodge<span style="color:#f92672">=.</span><span style="color:#ae81ff">5</span>, join<span style="color:#f92672">=</span>False, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dark&#34;</span>,
+                  markers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d&#34;</span>, scale<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Class preferences: Q11-Q13&#39;</span>, size <span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+
+<span style="color:#75715e">#clean up the legend</span>
+handles, labels <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>get_legend_handles_labels()
+ax<span style="color:#f92672">.</span>legend(handles[:<span style="color:#ae81ff">7</span>], labels[:<span style="color:#ae81ff">7</span>],
+handletextpad<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, columnspacing<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+loc<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;center right&#34;</span>, ncol<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, frameon<span style="color:#f92672">=</span>True);
+
+</code></pre></div><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/download5.png"/> 
+</figure>
+
+<p>The scatter above shows the predicted values and the poinplots show the actual values.</p>
+<p>It seems that most of the class (about 60%) likes science fiction and fantasy books! Also, most of the class (about 85%) have been to NYC. Only about 20% of the class prefers sweet food.</p>
+<p>We can also see that the class as a group underpredicted how many people have been to NYC and overpredicted how many people actually like sweet food!</p>
+<p>We can also create a fun pictogram showing individual preferences. The below plot is created using an interesting library called PyWaffle. I included link to the documentation and GitHub project below. I have encountered pictograms used extensively in infographics and also in executive summary presentations, so this could be a quite helpful view in certain situations.</p>
+<p>Below I am plotting the actual % of class that like specific type of books, food.</p>
+<p><a href="https://readthedocs.org/projects/pywaffle/downloads/pdf/latest/">https://readthedocs.org/projects/pywaffle/downloads/pdf/latest/</a>
+<a href="https://github.com/gyli/PyWaffle/blob/master/pywaffle/fontawesome_mapping.py">https://github.com/gyli/PyWaffle/blob/master/pywaffle/fontawesome_mapping.py</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#we just need high level summary of actual answers</span>
+books <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Mystery&#39;</span>: <span style="color:#ae81ff">41</span>, <span style="color:#e6db74">&#39;Science Fiction/Fantasy&#39;</span>: <span style="color:#ae81ff">59</span>}
+food <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Savory&#39;</span>: <span style="color:#ae81ff">39</span>, <span style="color:#e6db74">&#39;Spicy&#39;</span>: <span style="color:#ae81ff">39</span>, <span style="color:#e6db74">&#39;Sweet&#39;</span>:<span style="color:#ae81ff">22</span>}
+nyc <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Yes&#39;</span>: <span style="color:#ae81ff">85</span>, <span style="color:#e6db74">&#39;No&#39;</span>:<span style="color:#ae81ff">15</span>}
+
+
+fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(
+    FigureClass<span style="color:#f92672">=</span>Waffle,
+    plots<span style="color:#f92672">=</span>{
+        <span style="color:#e6db74">&#39;311&#39;</span>: {
+            <span style="color:#e6db74">&#39;values&#39;</span>: books,
+            <span style="color:#e6db74">&#39;icons&#39;</span>:<span style="color:#e6db74">&#39;book&#39;</span>,
+            <span style="color:#e6db74">&#39;labels&#39;</span>: [f<span style="color:#e6db74">&#34;{a} ({b})&#34;</span> <span style="color:#66d9ef">for</span> a,b <span style="color:#f92672">in</span> books<span style="color:#f92672">.</span>items()],
+            <span style="color:#e6db74">&#39;legend&#39;</span>: {
+                <span style="color:#e6db74">&#39;loc&#39;</span>: <span style="color:#e6db74">&#39;upper right&#39;</span>,
+                <span style="color:#e6db74">&#39;bbox_to_anchor&#39;</span>: (<span style="color:#ae81ff">1.33</span>, <span style="color:#ae81ff">1</span>),
+                <span style="color:#e6db74">&#39;fontsize&#39;</span>: <span style="color:#ae81ff">10</span>
+            },
+            <span style="color:#e6db74">&#39;title&#39;</span>: {
+                <span style="color:#e6db74">&#39;label&#39;</span>: <span style="color:#e6db74">&#39;Class book preferences in %&#39;</span>,
+                <span style="color:#e6db74">&#39;loc&#39;</span>: <span style="color:#e6db74">&#39;left&#39;</span>,
+                <span style="color:#e6db74">&#39;fontsize&#39;</span> : <span style="color:#ae81ff">12</span>
+            }
+        },
+        <span style="color:#e6db74">&#39;312&#39;</span>: {
+            <span style="color:#e6db74">&#39;values&#39;</span>: food ,
+            <span style="color:#e6db74">&#39;labels&#39;</span>: [f<span style="color:#e6db74">&#34;{a} ({b})&#34;</span> <span style="color:#66d9ef">for</span> a,b <span style="color:#f92672">in</span> food<span style="color:#f92672">.</span>items()],
+            <span style="color:#e6db74">&#39;icons&#39;</span> : <span style="color:#e6db74">&#39;birthday-cake&#39;</span>,
+            <span style="color:#e6db74">&#39;legend&#39;</span>: {
+                <span style="color:#e6db74">&#39;loc&#39;</span>: <span style="color:#e6db74">&#39;upper right&#39;</span>,
+                <span style="color:#e6db74">&#39;bbox_to_anchor&#39;</span>: (<span style="color:#ae81ff">1.18</span>, <span style="color:#ae81ff">1</span>),
+                <span style="color:#e6db74">&#39;fontsize&#39;</span>: <span style="color:#ae81ff">10</span>
+            },
+            <span style="color:#e6db74">&#39;title&#39;</span>: {
+                <span style="color:#e6db74">&#39;label&#39;</span>: <span style="color:#e6db74">&#39;Class food preferences in %&#39;</span>,
+                <span style="color:#e6db74">&#39;loc&#39;</span>: <span style="color:#e6db74">&#39;left&#39;</span>,
+                <span style="color:#e6db74">&#39;fontsize&#39;</span> : <span style="color:#ae81ff">12</span>
+            }
+        },
+        <span style="color:#e6db74">&#39;313&#39;</span>: {
+            <span style="color:#e6db74">&#39;values&#39;</span>: nyc ,
+            <span style="color:#e6db74">&#39;colors&#39;</span>: (<span style="color:#e6db74">&#34;#2196f3&#34;</span>, <span style="color:#e6db74">&#34;#ff5252&#34;</span>),
+            <span style="color:#e6db74">&#39;icons&#39;</span> : <span style="color:#e6db74">&#39;child&#39;</span>,
+            <span style="color:#e6db74">&#39;labels&#39;</span>: [f<span style="color:#e6db74">&#34;{a} ({b})&#34;</span> <span style="color:#66d9ef">for</span> a,b <span style="color:#f92672">in</span> nyc<span style="color:#f92672">.</span>items()],
+            <span style="color:#e6db74">&#39;legend&#39;</span>: {
+                <span style="color:#e6db74">&#39;loc&#39;</span>: <span style="color:#e6db74">&#39;upper right&#39;</span>,
+                <span style="color:#e6db74">&#39;bbox_to_anchor&#39;</span>: (<span style="color:#ae81ff">1.15</span>, <span style="color:#ae81ff">1</span>),
+                <span style="color:#e6db74">&#39;fontsize&#39;</span>: <span style="color:#ae81ff">10</span>
+            },
+            <span style="color:#e6db74">&#39;title&#39;</span>: {
+                <span style="color:#e6db74">&#39;label&#39;</span>: <span style="color:#e6db74">&#39;Percentage of class that visited NYC in %&#39;</span>,
+                <span style="color:#e6db74">&#39;loc&#39;</span>: <span style="color:#e6db74">&#39;left&#39;</span>,
+                <span style="color:#e6db74">&#39;fontsize&#39;</span> : <span style="color:#ae81ff">12</span>
+            }
+        },
+    },
+    rows<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>,
+    figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">7</span>)  
+)
+
+</code></pre></div><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pic-survey/download6.png"/> 
+</figure>
+
+<p>This is a different way to present an actual result of the survey for some of the personal questions. I used pie charts for the same purpose on the first 6 questions of the survey, but pictogram is another fun way to look at the actual results!</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://tsolopchuk.github.io/Tetyana_Portfolio/" >
+    &copy;  Tetyana Nesdill 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

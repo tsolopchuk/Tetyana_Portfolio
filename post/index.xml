@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Tetyana Nesdill</title>
+    <link>https://tsolopchuk.github.io/Tetyana_Portfolio/post/</link>
+    <description>Recent content in Projects on Tetyana Nesdill</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://tsolopchuk.github.io/Tetyana_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Survey Data Cleaning &amp; Visualization</title>
+      <link>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-3/</link>
+      <pubDate>Mon, 22 Mar 2021 11:13:32 -0400</pubDate>
+      
+      <guid>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-3/</guid>
+      <description>This notebook is dedicated to a short visual exploration of a survey data. The survey participants are students in a graduate program. The survey includes 13 questions related to data science skills and experiences, as well as some personal questions to get to know your class better. As part of the survey, each student answered 13 questions and also predicted how the fellow students would answer each question. For example, there is a question around food preferences and whether one prefers spicy, sweet or savory food.</description>
+    </item>
+    
+    <item>
+      <title>Network Visualization Tutorial</title>
+      <link>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-5/</link>
+      <pubDate>Sat, 13 Mar 2021 11:15:58 -0400</pubDate>
+      
+      <guid>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-5/</guid>
+      <description>1. Visualization technique description
+The visualization technique that I am going to demonstrate in this notebook is network visualization.
+First, I wanted to cover a couple of concepts that I am using in this notebook. Network comprises of edges and nodes. Nodes are separate entities, for example, people in a social network. Edges are the connection points between the nodes, for example, relationship between people in a social network. Visual representation of edges and nodes is a network visualization.</description>
+    </item>
+    
+    <item>
+      <title>Churn Prediction</title>
+      <link>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-6/</link>
+      <pubDate>Wed, 14 Oct 2020 11:25:05 -0400</pubDate>
+      
+      <guid>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-6/</guid>
+      <description>Link to GitHub project: https://github.com/tsolopchuk/churn
+Telecom industry is highly saturated when it comes to new customer acquisition. Everyone has a phone or two and there is not much room left for growth of market share for the telecom providers. To grow the market share telecom providers either a) need to convince people they need even more connected devices per household or b) win market share from the competitors. Wining competitors’ market share is important; however, telecom companies also need to make sure that they keep their base or current customers satisfied with the service and reduce churn among their customer base.</description>
+    </item>
+    
+    <item>
+      <title>Multiple Regression Analysis</title>
+      <link>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-1/</link>
+      <pubDate>Tue, 12 May 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-1/</guid>
+      <description>Link to GitHUb project: https://github.com/tsolopchuk/regression_analysis
+Objectives:
+(1) Develop regression model in R to establish and evaluate relationship between happiness score and various socioeconomic, demographic, and health indicators;
+(2) identify variables that are the most impactful in predicting the happiness score.
+Happiness score is published annually in the World Happiness Report by the United Nations Sustainable Development Solutions Network. Happiness score is calculated based on respondents estimate of their own lives. Each country has a sample size of 2000 to 3000 respondents that complete a comprehensive survey about their lives that feeds into the total happiness score.</description>
+    </item>
+    
+    <item>
+      <title>Traffic Data Exploration</title>
+      <link>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-4/</link>
+      <pubDate>Wed, 12 Feb 2020 11:14:48 -0400</pubDate>
+      
+      <guid>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-4/</guid>
+      <description>Objectives:
+(1) Conduct data exploration analysis in R and create effective visualizations to present data exploration observations.
+(2) Have fun with data and uncover interesting insights.
+Explored data set includes almost 3 000 000 records of car accidents reported across 49 states from February 2016 to December 2019.
+Total number of accidents and the underlying trends
+How many reported accidents were in the US last year? How many accidents occur on average per month?</description>
+    </item>
+    
+    <item>
+      <title>Network Analysis</title>
+      <link>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-2/</link>
+      <pubDate>Wed, 10 Apr 2019 11:00:59 -0400</pubDate>
+      
+      <guid>https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-2/</guid>
+      <description>Link to GitHUb project: https://github.com/tsolopchuk/network_optimization
+(I)	Introduction
+Supply chain specialists are often tasked with minimizing cost while maintaining acceptable service levels. Inventory carrying cost directly impacts profitability. If a business carries too little inventory, there will be shortages that lead to missed business opportunities, but if a business carries too much inventory, it can become obsolete and inventory carrying costs will increase.
+The airline industry is no exception. They must minimize inventory carrying cost while ensuring that inventory is positioned in the correct locations at the appropriate time.</description>
+    </item>
+    
+  </channel>
+</rss>

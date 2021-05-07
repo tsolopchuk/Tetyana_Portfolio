@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Multiple Regression Analysis | Tetyana Nesdill</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="What makes us happy?">
+    <meta name="generator" content="Hugo 0.82.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="https://tsolopchuk.github.io/Tetyana_Portfolio/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Multiple Regression Analysis" />
+<meta property="og:description" content="What makes us happy?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-05-12T11:00:59-04:00" />
+<meta property="article:modified_time" content="2020-05-12T11:00:59-04:00" /><meta property="og:site_name" content="Tetyana Nesdill" />
+
+<meta itemprop="name" content="Multiple Regression Analysis">
+<meta itemprop="description" content="What makes us happy?"><meta itemprop="datePublished" content="2020-05-12T11:00:59-04:00" />
+<meta itemprop="dateModified" content="2020-05-12T11:00:59-04:00" />
+<meta itemprop="wordCount" content="1934">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Multiple Regression Analysis"/>
+<meta name="twitter:description" content="What makes us happy?"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://tsolopchuk.github.io/Tetyana_Portfolio/images/caroline-hernandez-tJHU4mGSLz4-unsplash.jpg');">
+    <div class="pb2-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://tsolopchuk.github.io/Tetyana_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Tetyana Nesdill
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv5 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Multiple Regression Analysis</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              What makes us happy?
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      <h1 class="f1 athelas mt3 mb1">Multiple Regression Analysis</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-12T11:00:59-04:00">May 12, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Link to GitHUb project: <a href="https://github.com/tsolopchuk/regression_analysis">https://github.com/tsolopchuk/regression_analysis</a></p>
+<p><strong>Objectives:</strong></p>
+<p>(1) Develop regression model in R to establish and evaluate relationship between happiness score and various socioeconomic, demographic, and health indicators;</p>
+<p>(2) identify variables that are the most impactful in predicting the happiness score.</p>
+<p>Happiness score is published annually in the World Happiness Report by the United Nations
+Sustainable Development Solutions Network. Happiness score is calculated based on respondents estimate of their own lives. Each country has a sample size of 2000 to 3000 respondents that complete a comprehensive survey about their lives that feeds into the total happiness score. This analysis considers happiness score to be the dependent variable.
+On the other hand, the World Bank gathers data that represents various socioeconomic, demographic, and health indicators. The open database has very rich collection of indicators that describe essentially every part of our lives.</p>
+<p>What makes one country happier than its neighbors? What socioeconomic, demographic or health indicators can help predict happiness score in a given country? And what makes us happy? To answer these questions, multiple regression analysis can be used.</p>
+<p>As in any modeling exercise a 5-step approach will used:</p>
+<ol>
+<li>Collect data</li>
+<li>Explore and prepare the dataset for analysis</li>
+<li>Train model on the dataset</li>
+<li>Evaluate model performance</li>
+<li>Improve the model</li>
+</ol>
+<p><strong>(1)	Collect data</strong></p>
+<p>Happiness score is published in the World Happiness Report. The data is available for 153 countries. Happiness score is the dependent variable. For the purposed of this analysis 2018 happiness scores will be used.</p>
+<p>For the independent variables World Bank open database indicators will be used. There is a total of 1430 indicators that represent economic, demographic, social factors in each country. The data is used for 2018 as well.</p>
+<p><strong>(2)	Explore and prepare the dataset for analysis</strong></p>
+<p><strong>(2.1) Explore the dependent variable</strong></p>
+<p>The dependent variable is plotted to better understand its distribution pattern.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/hist_of_happy3.png"/> 
+</figure>
+
+<p>The dependent variable has approximately normal bell-shaped distribution. The values fall between approximately 2.5 and 7.7. Even though regression model does not require normal distribution, typically the model would fit better if the dependent variable distribution is close to normal, rather than having left – or right-skew patterns.</p>
+<p><strong>(2.2) Select independent variables for the analysis</strong></p>
+<p>The independent variables dataset from the World Bank repository requires some initial clean up before starting the analysis. All of the variables are stored in one column, so the data needs to be transformed into one variable per column and filtered on 2018. This results in 1430 variables. Basic exploration of the first few rows shows that there could be significant data gaps in many of the indicators.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/Initial%20explor2.png"/> 
+</figure>
+
+<p>This can be a helpful way to reduce the number of indicators/ independent variables in the analysis. By excluding variables that have more than 25% missing data points, only 448 variables are remaining.
+As a next step, the correlation coefficient is calculated to study interdependence between the dependent variable and each of the remaining independent variables. The independent variables that have strong correlation with the dependent variable are better positioned to explain the variance in the dependent variable.  The assumption is that &gt;|0.5| is considered to be strong correlation. This further helps reduce the number of variables: there are 80 variables remaining.
+Next, the basic definitions of the remaining 80 variables are reviewed to remove the redundant variables. For example, out of three variables (1) % of females employed in agriculture, (2) % of males employed in agriculture, and (3) total % of agriculture employment, one variable is sufficient to predict variance in the dependent variable. This logic is applied to all 80 variables and 18 independent variables are remaining.
+Below is a step-by-step visual guide of reducing the number of independent variables from 1430 variables to 18 suitable variables for the analysis.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/Independent%20Variable%20Selection%20Process2.png"/> 
+</figure>
+
+<p>Since the dependent and independent variables came from two different dataset, join function is performed by country codes.  Now, the final dataset is ready for the analysis.</p>
+<p><strong>(2.3) Check the missing values in the final dataset</strong></p>
+<p>Even though independent variables with 25% of values missing were excluded, it is prudent to take a look at the percentage of missing values for the selected independent variables to ensure that the missing values issue can be effectively mitigated. As per chart below, the percentage of missing datapoints is relatively low. The highest percentage of missing values is slightly over 15%.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/missing%20data2.png"/> 
+</figure>
+
+<p>Mice package is a great tool to perform imputation of missing values.  The function will replace all missing datapoints with corresponding values. In this case all the missing values are replaced with mean values.</p>
+<p><strong>(2.4) Explore correlation between independent variables</strong></p>
+<p>Next, the correlation between the independent variables must be explored. The below plot suggests that there are certain independent variables that are strongly correlated. Unfortunately, this can cause a multicollinearity issue. If independent variables are strongly correlated, the effect / impact of each independent variable on the dependent variable is hard to measure. This can cause the model to be less reliable.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/Initial%20Corr2.png"/> 
+</figure>
+
+<p>As a next step, the independent variables that are strongly correlated are removed. The correlation is assumed to be strong if it is &gt;|0.7|. This reduces the number of independent variables from 18 to 9. The below plot suggests that there is still correlation present between independent variables, but it is less than &gt;|0.7|, which is acceptable to move forward.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/Final%20corpolot2.png"/> 
+</figure>
+
+<p><strong>(3) Train the model</strong></p>
+<p>The dataset is split into training and test subsets. Training dataset includes 80% of the data and test dataset includes 20% of the data.
+Below are the regression results based on the full regression model that was run with all of the selected independent variables. However, there are several variables that are not performing well in this model. Several variables have p value greater than 0.05, which means that they are not statistically significant in predicting the dependent variable.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/Full%20regression2.png"/> 
+</figure>
+
+<p>In the next run the independent variables that are not statistically significant are excluded to improve model performance.</p>
+<p><strong>(4)	Evaluating model performance</strong></p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/New%20Model2.png"/> 
+</figure>
+
+<p>A: The residuals are showing that the maximum error was 1.7466, which means that one of the values was underpredicted by 1.7466.  However, 50% of errors fall between -0.3989 and 0.4273. This means that the majority of observations were underpredicted by 0.4273 and over predicted by -0.3989 of the corresponding true value.</p>
+<p>B: Adjusted R-squared is 69%, which means that the model can describe 69% of variation in the dependent variable. This is not a terrible prediction, further improvements in the model can be explored.</p>
+<p>C: All of the remaining independent variables are statistically significant. P-value is &gt; 0.05.
+Additionally, the model is run on the test data subset and the correlation between predicted values and the actual values is calculated. The resulting correlation is 0.82, which suggests a strong positive correlation between the predicted values and the true values of the dependent variable in the test data subset. This is a positive indicator meaning that the predicted values are not too far off from the true values.</p>
+<p>On the chart below, the correlation is plotted between predicted and true values in the test data subset. Points that fall above the red line are the observations were the actual happiness score was higher than predicted; and the points that fall below the red line are the observations were the actual values were lower than predicted.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/cor%20line3.png"/> 
+</figure>
+
+<p><strong>(5) Improving model performance</strong></p>
+<p>There is a number of ways to improve the overall model performance. In this case what worked best was to look at each of the four independent variables and understand the distribution and other patterns in the independent variables. To do so, a histogram of each of the independent variables is plotted; and it appears that one of the four independent variables is highly right-skewed. This suggests that we might be able to improve our model prediction if we log the skewed independent variable.</p>
+<p><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/NY.GDP.PCAP.CD2.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/Final%20model2.png"/> 
+</figure>
+</p>
+<p>The adjusted R-squared improved to 75%, which means that the improved model can predict 75% of the variance in the dependent variable.</p>
+<p><strong>Conclusions:</strong></p>
+<p>In summary, it appears that the happiness score is positively correlated with the GDP per capita; and negatively correlated with the percentage of rural population, total level of unemployment, and percentage of military expense of GDP. If a country has high GDP per capita, low unemployment, low military expenses and mostly urban population, it is likely that it is potentially a “happy country”. Contrarily, it makes sense that for a country with low GDP per capita, while still high military expenses, low urbanization and high unemployment, there is less of security and prosperity overall, which is represented in the overall lower happiness score.</p>
+<p>The happiness score for a given country is computed based on the survey results submitted by its residents. This leads to quite natural and intuitive conclusion: people feel happier if there is economic security (e.g., job market is good and the country is relatively wealthy and has higher GDP per capita). Additionally, if a country spends less on military as percentage of GDP, an assumption can be made that such country is not actively engaged in a war or any military conflict, neither is expecting to be engaged in a war or a military conflict. This can provide additional sense of safety and security to country’s residents. Lastly, it is interesting that there is negative correlation between the happiness score and percentage of rural population. One could argue that urban growth indicates that people have more access to the critical infrastructure and job markets.</p>
+<p><strong>Can a tree help predict happiness more accurately?</strong></p>
+<p><strong>Objective:</strong></p>
+<p>(1) Improve happiness score prediction using regression tree model.</p>
+<p>Regression tree model is explored to improve the happiness score prediction. To be able to compare the results of final regression equation and regression tree, the same four selected independent variables will be used for regression tree model.</p>
+<p>Regression tree is constructed using training data subset. On the below chart, each of the final leaves includes predicted values for each observation reaching the leaf, as well as the total number (n) and % of observations falling into each of the categories. The below chart shows that there is a total of 8 final leaves.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics/tree2.png"/> 
+</figure>
+
+<p>After the model is trained, prediction can be run based on the test data subset. Below is the summary of the predicted happiness score and true value of the happiness score in the test data subset. The tree predictions fit quiet well. However, it appears that the highest error is at the lower end of happiness score spectrum: min predicted score is 3.542, while the min true value is 3.083.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Regression Tree</th>
+<th>Multiple Regression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Min:</td>
+<td>3.542</td>
+<td>3.083</td>
+</tr>
+<tr>
+<td>1st Q:</td>
+<td>4.874</td>
+<td>4.579</td>
+</tr>
+<tr>
+<td>Median:</td>
+<td>5.576</td>
+<td>5.478</td>
+</tr>
+<tr>
+<td>Mean:</td>
+<td>5.571</td>
+<td>5.397</td>
+</tr>
+<tr>
+<td>3rd Q:</td>
+<td>6.107</td>
+<td>6.181</td>
+</tr>
+<tr>
+<td>Max:</td>
+<td>7.184</td>
+<td>7.054</td>
+</tr>
+</tbody>
+</table>
+<p>To further evaluate model accuracy, MAE (mean estimate error) is computed. In the case of the regression tree model, MAE = 0.5, which means that on average the true value prediction was missed by 0.5 of the happiness score. In case of the multiple regression model, MAE = 0.51. This indicates that both models have relatively similar MAE and can be used interchangeably.</p>
+<p>As a last step, regression and regression tree models are tested against using simple average (or mean) for prediction. Mean of happiness score in the test dataset is 5.4. If mean is used as a prediction for every observation in the test sample, MAE is 0.85. MAE of 0.85 is much higher than either regression tree model or the multiple regression model (0.5 and 0.51 respectively).  This further indicates better prediction and efficiency of either the regression tree model or the multiple regression model when comparing to simplistic approach of using mean values for prediction.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://tsolopchuk.github.io/Tetyana_Portfolio/" >
+    &copy;  Tetyana Nesdill 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

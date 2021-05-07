@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Network Analysis | Tetyana Nesdill</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Network optimization for aircraft parts">
+    <meta name="generator" content="Hugo 0.82.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="https://tsolopchuk.github.io/Tetyana_Portfolio/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Network Analysis" />
+<meta property="og:description" content="Network optimization for aircraft parts" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tsolopchuk.github.io/Tetyana_Portfolio/post/chapter-2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-04-10T11:00:59-04:00" />
+<meta property="article:modified_time" content="2019-04-10T11:00:59-04:00" /><meta property="og:site_name" content="Tetyana Nesdill" />
+
+<meta itemprop="name" content="Network Analysis">
+<meta itemprop="description" content="Network optimization for aircraft parts"><meta itemprop="datePublished" content="2019-04-10T11:00:59-04:00" />
+<meta itemprop="dateModified" content="2019-04-10T11:00:59-04:00" />
+<meta itemprop="wordCount" content="2996">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Network Analysis"/>
+<meta name="twitter:description" content="Network optimization for aircraft parts"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://tsolopchuk.github.io/Tetyana_Portfolio/images/ashim-d-silva-pGcqw1ARGyg-unsplash.jpg');">
+    <div class="pb2-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://tsolopchuk.github.io/Tetyana_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Tetyana Nesdill
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://tsolopchuk.github.io/Tetyana_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv5 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Network Analysis</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Network optimization for aircraft parts
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      <h1 class="f1 athelas mt3 mb1">Network Analysis</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-04-10T11:00:59-04:00">April 10, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Link to GitHUb project: <a href="https://github.com/tsolopchuk/network_optimization">https://github.com/tsolopchuk/network_optimization</a></p>
+<p><strong>(I)	Introduction</strong></p>
+<p>Supply chain specialists are often tasked with minimizing cost while maintaining acceptable service levels. Inventory carrying cost directly impacts profitability. If a business carries too little inventory, there will be shortages that lead to missed business opportunities, but if a business carries too much inventory, it can become obsolete and inventory carrying costs will increase.</p>
+<p>The airline industry is no exception. They must minimize inventory carrying cost while ensuring that inventory is positioned in the correct locations at the appropriate time. Airlines have two major groups of inventory items: catering and aircraft maintenance. Catering includes everything customers can get on board of an aircraft (e.g., food, drinks, headphones, pillows, blankets). The aircraft maintenance category includes all necessary parts to perform scheduled and ad hoc aircraft maintenance. In this research, the focus will be on the aircraft maintenance inventory group. There are hundreds of large and medium size airports in the US and each aircraft type has millions of parts. For example, a Boeing 747 has about 6 million parts. The challenge is how to plan which parts need to be located at different airports to ensure scheduled and ad hoc aircraft maintenance can be completed on time.</p>
+<p>Scheduled aircraft maintenance can be planned in advance. There is more time to confirm that required parts are in stock and reserve an aircraft hangar. However, ad hoc maintenance only happens when something breaks. Even something as simple as a broken coffee maker can be a no-go for an aircraft take-off.</p>
+<p>We are going to focus on United Airlines for the purposes of this research.</p>
+<p><strong>Problem Statement:</strong> determine optimal inventory location for United Airlines to conduct scheduled and ad hoc maintenance while minimizing inventory carrying cost.</p>
+<p><strong>Dataset:</strong></p>
+<p>The data was obtained from the Bureau of Transportation Statistics. The Bureau of Transportation Statistics has flight record data available since 1987 (more information can be found at <a href="https://www.transtats.bts.gov/)">https://www.transtats.bts.gov/)</a>. This paper will analyze a year of flight data from one of the major US airlines – United Airlines.</p>
+<p>The clean dataset includes 678,755 observations, where one observation is a record of United Airlines completed flight in 2019. The dataset also includes the following columns: 1) flight date, 2) carrier (United Airlines = UA), 3) tail number, 4) flight number, 5) weekday, 6) month, 7) day of the month, 8) origin description, 9) origin code, 10) destination description, 11) destination code, 12) origin-destination pairs.</p>
+<p><strong>Research Overview:</strong></p>
+<p>The research has the following structure:</p>
+<ul>
+<li>Data cleaning: load data in R and perform necessary transformations before starting the analysis</li>
+<li>Data exploration: explore the dataset and learn more about flight frequency patterns, most popular origin-destination flight pairs, and fluctuations in the flight frequency, depending on the month or day of the week</li>
+<li>Network centrality analysis: use igraph package in R to identify the most central nodes in the network to serve as part distribution HUBs</li>
+<li>Flight connectivity HUBs: study flight connectivity between the distribution HUBs and other airports in the network</li>
+<li>HUB-to-spoke assignment for part distribution: assign each airport in the network to a distribution HUB based on geographical distance and flight connectivity</li>
+<li>Conclusion: summarize the study and explain impact of the optimized network on inventory cost and inventory carrying costs</li>
+</ul>
+<p><strong>(II)	Data cleaning</strong></p>
+<p>Before starting the analysis, a series of data cleaning procedures must be conducted. The Bureau of Transportation Statistic allows only a month worth of data to be downloaded at a time. To obtain an entire year of data, 12 files must be downloaded and combined using rbind function in R.</p>
+<p>After consolidation of the 12 files, the dataset below includes flight date, carrier, tail number, flight number, origin airport ID and destination airport ID. The data set contains flight records for multiple airlines. The data can be filtered using dplyr package to include only the carrier of interest – United Airlines.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/pic1.png" width="0%"/> 
+</figure>
+
+<p>Then, lubridate can be used to create additional columns that will be useful for the analysis: weekday, month, and day of the month. As a result, three new variables were added to the data set.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/pic2.png"/> 
+</figure>
+
+<p>However, as per above screenshot, origin airport ID and destination airport ID are not very helpful. Flyers are used to seeing 3-letter IATA codes, like EWR or JFK, and not a 5-digit code. The Bureau of Transportation Statistics has an additional dictionary file on their website that translates these 5-digit codes to 3-letter IATA codes.</p>
+<p>A left join function from the dplyr package will add the IATA origin code ID, destination code, origin, and destination descriptions to our dataset. The newly created columns make it easier for a reader to understand the origin and destination airports, and their locations.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/pic3.png"/> 
+</figure>
+
+<p>The last variable in the analysis is origin – destination pairs. This can be easily created by combining our origin and destination codes.
+As previously mentioned, the clean dataset includes 678,755 observations, where one observation is a record of United Airlines completed flight in 2019. The dataset includes the following 12 columns: 1) flight date, 2) carrier (United Airlines = UA), 3) tail number, 4) flight number, 5) weekday, 6) month, 7) day of the month, 8) origin description, 9) origin code, 10) destination description, 11) destination code, 12) origin-destination pairs.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/pic4.png"/> 
+</figure>
+
+<p><strong>(III)	Data Exploration</strong></p>
+<p>Before visualizing the network, it is important to explore the dataset to better understand flight patterns and get more familiar with the dataset.</p>
+<p>On average, United Airlines has 56,562 flights per month. Based on the graph “United Airlines – Total Flights per Month”, certain months such as January, February, November, and December have fewer than average flights per month. However, late spring and summer are above average because this is when people typically take vacations.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/Total%20Flights%20per%20Month.png"/> 
+</figure>
+
+<p>The line graphs titled, “United Airlines – Daily Flights by Month” show a more in-depth view of monthly flight trends. One obvious trend is that people clearly do not travel on the day of Thanksgiving in November or Christmas in December. However, and more importantly, there is a weekly pattern that occurs each month (certain days of the week people travel less).</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/By%20Month.png"/> 
+</figure>
+
+<p>The next two plots show weekly trends and plot average daily flights line (in red) to better compare which days of the week have below average number of flights. The clear conclusion is that Saturdays are the least busy day for travel. Tuesdays and Wednesdays are less busy for air travel than Mondays, Thursdays, and Fridays. For a 2-day maintenance operation, Tuesdays and Wednesdays would be the preferred time based on the frequency of flights.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/By%20Weekday%20Facet.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/By%20Weekday.png"/> 
+</figure>
+
+<p>After frequency of flights by day is studied, it is critical to define the most popular routes. This will provide a better idea which airports could be the busiest in the network. “Most Popular Routes – United Airlines” plots the number of flights for each origin-destination pair and displays the origin-destination pairs that have more than 300 flights per month. The most of flights take place between SFO, ORD, EWR, LGA, LAX. These busy airports stand out as potential locations for aircraft maintenance locations.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/Pop%20Routes.png"/> 
+</figure>
+
+<p><strong>(IV)	Network centrality analysis</strong></p>
+<p>The main idea behind this analysis is that inventory can be centralized at a few distribution HUBs and then supplied from the distribution HUBs to other airports in the network that need maintenance parts. This will reduce the total number of parts owned by United Airlines and reduce inventory carrying costs as well as capital tied up in inventory. Since United Airlines has its own fleet of aircrafts and regular scheduled flights, maintenance parts can be placed on the outbound aircrafts. There is no shipping fee to the airline as parts are transported via its own scheduled passenger flights. This approach will work for 95% of maintenance parts that can fit in the cargo section of an airplane, some of the bulkier parts will need to be shipped by a different transportation mode. This case is not in scope, but can use similar concepts and approach as presented in this research.
+The part distribution HUBs should be located at the most central airports in the network. The most central airports would be the most well-positioned and connected to supply parts to other airports.</p>
+<p>The igraph package in R can help understand the network centrality and identify the most central airports for part distribution. Airports are considered nodes and flights between connected airports are considered to be edges.</p>
+<p>In order to identify the most central airports in the network, two centrality measures can be used: degree centrality and closeness centrality. Degree centrality indicates the number of edges each node has. For example, ORD has degree centrality of 195 or ORD has 195 edges. This indicates that ORD has the highest number of flights or connections to other airports, and is thus the most central node in the network.</p>
+<p>Closeness centrality indicates how close a node is to all other nodes in the network. It is a shortest path length from the node to every other node in the network.</p>
+<table>
+<thead>
+<tr>
+<th>Airport:</th>
+<th>Degree Centrality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORD:</td>
+<td>195</td>
+</tr>
+<tr>
+<td>DEN:</td>
+<td>186</td>
+</tr>
+<tr>
+<td>IAH:</td>
+<td>159</td>
+</tr>
+<tr>
+<td>EWR:</td>
+<td>142</td>
+</tr>
+<tr>
+<td>SFO:</td>
+<td>127</td>
+</tr>
+<tr>
+<td>IAD:</td>
+<td>99</td>
+</tr>
+<tr>
+<td>LAX:</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Airport:</th>
+<th>Closeness Centrality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ORD:</td>
+<td>0.0066</td>
+</tr>
+<tr>
+<td>DEN:</td>
+<td>0.0064</td>
+</tr>
+<tr>
+<td>IAH:</td>
+<td>0.0059</td>
+</tr>
+<tr>
+<td>EWR:</td>
+<td>0.0056</td>
+</tr>
+<tr>
+<td>SFO:</td>
+<td>0.0054</td>
+</tr>
+<tr>
+<td>IAD:</td>
+<td>0.0050</td>
+</tr>
+<tr>
+<td>LAX:</td>
+<td>0.0046</td>
+</tr>
+</tbody>
+</table>
+<p>Seven most central airports are assigned a role of part distribution HUB. Seven is an arbitrary number which will be further validated in the next section of this research. Having too many distribution HUBs impacts operating cost as well (e.g., additional headcount at each facility, rent or lease of a building). Ideally, less then seven HUBs should be sufficient for parts distribution purposes.</p>
+<p><strong>(V)	Flight connectivity from the United Airlines HUBs</strong></p>
+<p>The next question that needs to be answered is whether seven HUBs are required to support United Airlines domestic flight network from part distribution perspective. In order to determine the sufficient number of distribution HUBs in the network and to explore geographical connectivity, all inbound and outbound flights can be plotted from each of the seven distribution HUBs. The red lines represent frequent flights and white lines represent less frequent flights.</p>
+<p>By studying the “Flight Connectivity” plots, a conclusion can be made that seven HUBs geographically cover all the US based airports: EWR and IAD cover the East Coast airports, LAX and SFO cover the West Coast, DEN is centrally located and is well connected to the middle of the county, ORD is the most connected airport in the network and is relatively well connected to all areas of the country, and IAH covers connectivity in the South of the country.</p>
+<p>However, there seems to be an overlap in the connectivity provided by LAX and SFO, and EWR and IAD. It seems that LAX and SFO are well connected to the West Coast airports, and EWR and IAD to the East Coast airports, so the question that needs to be answered is whether one airport from each pair would be sufficient to serve as a distribution HUB in each region.</p>
+<p><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/ORD.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/EWR.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/DEN.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/LAX.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/IAH.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/SFO.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/IAD.png"/> 
+</figure>
+</p>
+<p>As per the following chart “Inbound &amp; Outbound Flights – United Airlines US HUBs,” LAX and IAD do not have as heavy air traffic as the other 5 airports. It is important to note that LAX and IAD have about half of the number of flights as the other HUBs. Subsequently, there will be fewer transfers/ layovers through these two airports. If there are fewer flights, transfers, and aircraft touchdowns, there will be also fewer opportunities for scheduled maintenance, such as overnight maintenance, and fewer options to distribute parts to other airports in the network.</p>
+<p>In order to simplify our distribution network and further reduce costs, LAX and IAD should not be considered part distribution HUBs. This means that LAX and IAD will not carry as many maintenance parts and distribute them to other airports in the flight network. The number of distribution HUBs is reduced from 7 to 5 due to fewer total flights at LAX and IAD airports and their overlapping geographical coverage with SFO and EWR respectively.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/Inbound%20&amp;%20Outbound%20Flights.png"/> 
+</figure>
+
+<p><strong>(VI)	HUB-to-spoke assignment (part distribution)</strong></p>
+<p>After identifying the most central airports in the network and validating their geographic flight connectivity, all the other airports in the network need to be assigned to one of the five distribution HUBs. This will allow for each airport in the network to know where to request parts from and also to plan what parts need to be located at its assigned HUB.</p>
+<p>As previously discussed, instead of trying to position inventory at multiple airports, United would be better off to centralize it in the distribution HUBs. United will save on inventory cost (e.g., buying parts) as well as inventory carrying cost (e.g., leasing a warehouse). Instead of storing the same part in EWR and BOS, the maintenance parts will be stored at EWR and dispatched to BOS upon request given that it is less than 2 hrs flight distance away.</p>
+<p>Exceptions to this rule will be small, easy to replace parts, such as aircraft seat covers or head support napkins. Such parts are typically low dollar value and can be quickly replaced between flights. An important caveat to this concept is that even these parts need to be planned based on the type of aircraft that flies to such airports. For example, if only Boeings are flying to BOS, then United does not need to have seat covers for Airbuses in Boston.</p>
+<p>It is intuitive that BOS should be assigned to EWR. It is the closest of five HUBs. However, it will be very difficult to come up manually with such assignment for the remaining airports. Instead, this can be automated by calculating distance between each airport and each of the 5 distribution HUBs based on the corresponding latitude and longitude of the airports.</p>
+<p>In the subsequent table, the first five columns show the distance between each of the HUBs and BOS. We can clearly see that the shortest distance is from EWR to BOS, only about 200 miles. The same logic will be applied for the remaining airports in the United Airlines network.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/chart%207.png"/> 
+</figure>
+
+<p>After the distance is calculated, the min function can be used to find the minimum distance between a given airport and one of the five HUBs. The HUB with the shortest distance will be assigned as the distribution HUB. In the example below, EWR should be assigned as distribution center to BOS. This logic applies to the rest of the airports.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/chart%208.png"/> 
+</figure>
+
+<p>It is critical to note that all of the HUB-to-spoke assignments have United flights between them. This was identified as part of the flight connectivity analysis in the previous section. For example, EWR can supply parts as needed to BOS because there are also United Airlines flights between these two airports. Part can be placed on a plane and flown to BOS for maintenance.</p>
+<p>HUB-to-spoke assignment can also be mapped using igraph for each of the HUBs.</p>
+<p><figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/EWR_dist.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/DEN_dist.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/IAH_dist.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/ORD_dist.png"/> 
+</figure>
+
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/SFO_dist.png"/> 
+</figure>
+</p>
+<p>However, network does not work in five separate silos. Unexpected shortages may arise, like EWR running out of parts needed for maintenance in BOS. To make sure the network is complete, United should add connectivity between HUBs. If there is connectivity between HUBs and there is a stock out in EWR for BOS parts, such parts can be shipped from one of the other distribution HUBs to EWR.</p>
+<p>Before adding HUB connectivity to our network, the connectivity between HUBs must be evaluated. The “HUB Connectivity – United Airlines” plots the average monthly flights between all HUBs. There are between 230 and 400 flights per month between the HUBs, which means there are between 7 and 14 flights per day between the HUBs. This represents very strong connectivity between five HUBs. If one HUB has a stock out of a part, it can be put on a plane and shipped to the HUB with a stock out within a few hours.</p>
+<p>The HUB connectivity can be added to complete the network plot.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/HUB%20Connectivity.png"/> 
+</figure>
+
+<p>The “Optimized Parts Network” chart represents optimized distribution network for maintenance parts. Each airport or spoke is assigned to a HUB, additionally there is a strong HUB connectivity that can support redistribution in the network. As per below scenario, HUBs receive and store maintenance parts, when there is a need for parts in one of the other airports, the assigned distribution HUB dispatches the required part. If there is a stock out in one of the HUBs, it can request redistribution of parts from the other four HUBs in the network.</p>
+<figure>
+    <img src="https://tsolopchuk.github.io/Tetyana_Portfolio/images/pics_network/Optimized_dist.png"/> 
+</figure>
+
+<p><strong>(VII)	Conclusion:</strong></p>
+<p>The optimized part distribution network has important implications on the inventory and inventory carrying costs for United Airlines.</p>
+<ul>
+<li>
+<p>There will be reduction in the number of parts owned and stored by United Airlines. Five HUBs will serve as main distribution centers and inventory location centers. Spokes do not have to carry a lot of inventory as they can be supplied from the assigned closest HUB.</p>
+</li>
+<li>
+<p>The reduction in inventory cost is driven by inventory centralization. Less airports have to carry the same parts as the inventory is centralized at the five distribution HUBs. This results in fewer total units purchased and owned. Less capital is tied up in the inventory for aircraft maintenance.</p>
+</li>
+<li>
+<p>The reduction in inventory carrying cost is also a result of inventory centralization. We can reduce fees paid for storage rooms and required staff at each storage room location as we centralize inventory at the distribution HUBs.</p>
+</li>
+<li>
+<p>Stockouts can be mitigated given high connectivity between the five HUBs. This reduces the risk of stockouts and prevents purchasing of too much of inventory at the HUBs.</p>
+</li>
+<li>
+<p>Flight connectivity study validates our assumption that parts can be delivered from HUBs to spokes and HUB assignment is based on the validated fact that there is a flight between given HUB and spoke/airport.</p>
+</li>
+<li>
+<p>Based on the weekly and monthly fluctuations in flight frequency, we can also identify the best time to preform scheduled maintenance.
+Lastly, the optimization of distribution network as performed in this study is applicable across all industries. Inventory optimization is a significant challenge in supply chain today and network optimization can help significantly reduce inventory cost and inventory carrying costs.</p>
+</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://tsolopchuk.github.io/Tetyana_Portfolio/" >
+    &copy;  Tetyana Nesdill 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
